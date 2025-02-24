@@ -1,9 +1,6 @@
 @webtap_agent_HostAddress = http://localhost:5208
 
-GET {{webtap_agent_HostAddress}}/weatherforecast/
-Accept: application/json
 
-###
 GET {{webtap_agent_HostAddress}}/testplan/
 Accept: application/json
 

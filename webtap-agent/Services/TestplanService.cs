@@ -4,9 +4,9 @@ using webtap_agent.Models;
 
 namespace webtap_agent.Services;
 
-public class TestplanService(string basePath)
+public class TestplanService(string basePath, string stationName)
 {
-    private string _pathToTestplanFolder = basePath;
+    private string _pathToTestplanFolder = basePath + "/" + stationName;
     private TestPlan? _testPlan;
 
     public TestPlan? TestPlan => _testPlan;
@@ -14,6 +14,7 @@ public class TestplanService(string basePath)
 
     public IEnumerable<string> GetTestplansInFolder() {
         //Find Files in Folder
+
         var files = Directory.GetFiles(_pathToTestplanFolder, "*.TapPlan", SearchOption.AllDirectories);
         
         files = files.Select(f => f.Replace(_pathToTestplanFolder+"/", "")).ToArray();

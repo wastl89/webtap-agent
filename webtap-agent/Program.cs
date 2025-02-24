@@ -15,7 +15,8 @@ builder.Services.AddSingleton<TestplanService>(provider =>
     var config = provider.GetService<IConfiguration>();
     Console.WriteLine(config.ToString());
     var basePath = config["Testplans:BasePath"];
-    return new TestplanService(basePath);
+    var stationName = config["Testplans:StationName"];
+    return new TestplanService(basePath, stationName);
 });
 builder.Services.AddSingleton<TestRunService>();
 builder.Services.AddControllers();
