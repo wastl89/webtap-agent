@@ -1,0 +1,34 @@
+@webtap_agent_HostAddress = http://localhost:5208
+
+GET {{webtap_agent_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{webtap_agent_HostAddress}}/testplan/
+Accept: application/json
+
+###
+POST {{webtap_agent_HostAddress}}/testplan/test
+Accept: application/json
+
+###
+POST {{webtap_agent_HostAddress}}/testplan/test2
+Accept: application/json
+
+###
+GET  {{webtap_agent_HostAddress}}/run/
+Accept: application/json
+
+###
+GET  {{webtap_agent_HostAddress}}/run/result
+Accept: application/json
+
+###
+POST {{webtap_agent_HostAddress}}/run/
+Accept: application/json
+
+###
+POST {{webtap_agent_HostAddress}}/run/stop
+Accept: application/json
+
+###
